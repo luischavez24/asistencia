@@ -32,6 +32,6 @@ public class LoginController {
 		LOG.info("METHOD: loginSuccess()");
 		LOG.info("Servicio");
 		
-		return "redirect:/servicios";
+		return "redirect:/asistencia";
 	}
 }

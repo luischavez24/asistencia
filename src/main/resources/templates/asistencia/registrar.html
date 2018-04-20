@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html 
+	class="h-100" 
+	lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head th:include="/fragments/head :: headFragment (pageTitle='Asistencia')">
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<div class="container h-100">
+		<div class="row align-items-center h-100">
+			<div class="col-md-8">
+				<form th:action="@{/asistencia/registrar}" method="POST" th:object="${asistencia}">
+					<div class="form-group">
+						<label for="carnet">Carnet Universitario</label>
+						<input type="text" class="form-control" th:field="*{codigo}"/>
+					</div>
+					<button type="submit" class="btn btn-success btn-block">
+						<i class="fa fa-plus"></i> Marcar
+					</button>
+				</form>			
+			</div>
+		</div>
+	</div>
+</body>
+</html>
