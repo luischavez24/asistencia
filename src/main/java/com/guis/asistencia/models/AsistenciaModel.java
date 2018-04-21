@@ -1,7 +1,5 @@
 package com.guis.asistencia.models;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -58,8 +56,7 @@ public class AsistenciaModel {
 
 	@Override
 	public String toString() {
-		
-		DateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+
 		return "AsistenciaModel [codigo=" + codigo + ", horaDeLlegada=" + horaDeLlegada + "]";
 	}
 	
