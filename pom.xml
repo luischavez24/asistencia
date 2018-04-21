@@ -5,12 +5,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.guis</groupId>
-	<artifactId>gestor-servicios</artifactId>
+	<artifactId>asistencia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>gestor-servicios</name>
-	<description>Gestor de Servicios</description>
+	<name>asistencia</name>
+	<description>Asistencia</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

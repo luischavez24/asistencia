@@ -12,15 +12,16 @@
 	<div class="container h-100">
 		<div class="row align-items-center h-100">
 			<div class="col-md-8">
+
 				<form th:action="@{/asistencia/iniciarClase}" method="POST" th:object="${sesion}">
 					<div class="form-group">
 						<label for="carnet">Nro de Sesion</label>
-						<input type="text" class="form-control" th:field="*{nroSesion}"/>
+						<input type="text" class="form-control" th:field="*{nIdSesion}"/>
 					</div>
 					
 					<div class="form-group">
 						<label for="hora">Hora de fin</label>
-						<input type="datetime-local" class="form-control" th:value="*{horaFin}" th:field="*{horaFin}"/>
+						<input type="time" class="form-control" th:value="*{tHoraFin}" th:field="*{tHoraFin}"/>
 					</div>
 										
 					<button type="submit" class="btn btn-success btn-block">

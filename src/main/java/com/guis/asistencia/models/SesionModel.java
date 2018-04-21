@@ -1,4 +1,4 @@
-package com.guis.gestorservicios.models;
+package com.guis.asistencia.models;
 
 import java.time.LocalDateTime;
 

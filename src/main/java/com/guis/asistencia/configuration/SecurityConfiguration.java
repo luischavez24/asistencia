@@ -1,4 +1,4 @@
-package com.guis.gestorservicios.configuration;
+package com.guis.asistencia.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

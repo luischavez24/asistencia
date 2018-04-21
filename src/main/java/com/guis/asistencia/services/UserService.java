@@ -1,4 +1,4 @@
-package com.guis.gestorservicios.services;
+package com.guis.asistencia.services;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,8 +15,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.guis.gestorservicios.entities.UserRole;
-import com.guis.gestorservicios.repository.UserRepository;
+import com.guis.asistencia.entities.UserRole;
+import com.guis.asistencia.repository.UserRepository;
 
 @Service("userService")
 public class UserService implements UserDetailsService{
@@ -26,12 +26,12 @@ public class UserService implements UserDetailsService{
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		com.guis.gestorservicios.entities.User user = userRepository.findByUsername(username);
+		com.guis.asistencia.entities.User user = userRepository.findByUsername(username);
 		List<GrantedAuthority> authorities = buildAuthorities(user.getUserRole());
 		return buildUser(user, authorities);
 	}
 	
-	private User buildUser (com.guis.gestorservicios.entities.User user, List<GrantedAuthority> authorities) {
+	private User buildUser (com.guis.asistencia.entities.User user, List<GrantedAuthority> authorities) {
 		return new User(user.getUsername(), user.getPassword(), user.isEnable(), 
 				true, true, true, authorities);
 	}

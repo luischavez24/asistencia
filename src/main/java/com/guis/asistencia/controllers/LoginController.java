@@ -1,4 +1,4 @@
-package com.guis.gestorservicios.controllers;
+package com.guis.asistencia.controllers;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import com.guis.gestorservicios.constants.ViewConstants;
+import com.guis.asistencia.constants.ViewConstants;
 
 @Controller
 @RequestMapping("")

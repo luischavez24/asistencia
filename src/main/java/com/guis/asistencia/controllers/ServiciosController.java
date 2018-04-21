@@ -1,11 +1,11 @@
-package com.guis.gestorservicios.controllers;
+package com.guis.asistencia.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.guis.gestorservicios.constants.ViewConstants;
+import com.guis.asistencia.constants.ViewConstants;
 
 @Controller
 @RequestMapping("/servicios")

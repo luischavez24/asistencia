@@ -12,6 +12,19 @@
 	<div class="container h-100">
 		<div class="row align-items-center h-100">
 			<div class="col-md-8">
+				  <div 
+			         th:if="${msj == '0'}" 
+			         th:include="/fragments/alert :: alerta(mensaje='Alumno ya marco la asistencia', tipo='danger')"
+			      ></div>
+			     <div 
+			         th:if="${msj == '1'}" 
+			         th:include="/fragments/alert :: alerta(mensaje='Asistencia marcada', tipo='success')"
+			     ></div>
+			     
+			    <div 
+			       th:if="${msj == '2'}" 
+			       th:include="/fragments/alert :: alerta(mensaje='Ya hay una sesion iniciada, puede continuar tomando lista ', tipo='warning')"
+			    ></div>
 				<form th:action="@{/asistencia/registrar}" method="POST" th:object="${asistencia}">
 					<div class="form-group">
 						<label for="carnet">Carnet Universitario</label>

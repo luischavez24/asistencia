@@ -1,4 +1,4 @@
-package com.guis.gestorservicios.constants;
+package com.guis.asistencia.constants;
 
 public interface ViewConstants {
 	

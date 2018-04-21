@@ -1,4 +1,4 @@
-package com.guis.gestorservicios.entities;
+package com.guis.asistencia.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
