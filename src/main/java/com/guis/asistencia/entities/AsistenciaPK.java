@@ -17,7 +17,7 @@ public class AsistenciaPK implements Serializable {
     @Column(name = "Sesion_nIdSesion")
     private int sesionnIdSesion;
     @Basic(optional = false)
-    @Column(name = "Alumno_vCodigoA")
+    @Column(name = "Alumno_vCodigoA", length=10)
     private String alumnovCodigoA;
 
     public AsistenciaPK() {

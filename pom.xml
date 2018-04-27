@@ -62,7 +62,19 @@
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
-		</dependency>		
+		</dependency>
+
+		<!-- Excel library -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
 	</dependencies>
 
 	<build>

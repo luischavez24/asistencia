@@ -11,31 +11,51 @@
 <body>
 	<div class="container h-100">
 		<div class="row align-items-center h-100">
-			<div class="col-md-8">
-				  <div 
-			         th:if="${msj == '0'}" 
-			         th:include="/fragments/alert :: alerta(mensaje='Alumno ya marco la asistencia', tipo='danger')"
-			      ></div>
-			     <div 
-			         th:if="${msj == '1'}" 
-			         th:include="/fragments/alert :: alerta(mensaje='Asistencia marcada', tipo='success')"
-			     ></div>
-			     
-			    <div 
-			       th:if="${msj == '2'}" 
-			       th:include="/fragments/alert :: alerta(mensaje='Ya hay una sesion iniciada, puede continuar tomando lista ', tipo='warning')"
-			    ></div>
+			<!-- Container del formulario  -->
+			<div class="col-md-8 mx-auto my-1">
+				<header class="text-center my-5">
+					<h1>Registro de asistencias</h1>
+				</header>
 				<form th:action="@{/asistencia/registrar}" method="POST" th:object="${asistencia}">
-					<div class="form-group">
+					<div class="form-group mb-3">
 						<label for="carnet">Carnet Universitario</label>
-						<input type="text" class="form-control" th:field="*{codigo}"/>
+						<input type="text" class="form-control" th:attr="readonly=${msj == '3'} ? 'readonly' : 'false'" th:field="*{codigo}" id="codAlumno"/>
 					</div>
-					<button type="submit" class="btn btn-success btn-block">
+					<button type="submit" class="btn btn-success btn-block" th:classappend="${msj == '3'} ? 'disabled'">
 						<i class="fa fa-plus"></i> Marcar
 					</button>
 				</form>			
 			</div>
+			<!-- Container de mensajes  -->
+			<div class="col-md-8 mx-auto my-1">
+				<span th:if="${msj == '1'}" th:text="${alumno}"></span>
+				<div
+			       th:if="${msj == '0'}" 
+			       th:include="/fragments/alert :: alerta(mensaje='El alumno ya marco la asistencia', tipo='danger')"
+			    ></div>
+				<div 
+				     th:if="${msj == '1'}" 
+				     th:include="/fragments/alert :: alerta(mensaje='Asistencia marcada', tipo='success')"
+				></div>
+				<div 
+				   th:if="${msj == '2'}" 
+				   th:include="/fragments/alert :: alerta(mensaje='La sesion está en curso, puede continuar tomando lista', tipo='warning')"
+				></div>
+				<div 
+				   th:if="${msj == '3'}" 
+				   th:include="/fragments/alert :: alerta(mensaje='La sesion ya acabo', tipo='danger')"
+				></div>
+				
+				<div 
+				   th:if="${msj == '4'}" 
+				   th:include="/fragments/alert :: alerta(mensaje='Alumno no registrado', tipo='danger')"
+				></div>
+			</div>				
 		</div>
 	</div>
+	
+	<script>
+		$("#codAlumno").focus();
+	</script>
 </body>
 </html>

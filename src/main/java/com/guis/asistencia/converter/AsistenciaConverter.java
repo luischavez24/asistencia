@@ -24,7 +24,7 @@ public class AsistenciaConverter {
 		model.setCodigo(entity.getAsistenciaPK().getAlumnovCodigoA());
 		model.setNroSesion(entity.getAsistenciaPK().getSesionnIdSesion());
 		model.setHoraDeLlegada(entity.getTHora());
-		
+		model.setAlumno(entity.getAlumno());
 		return model;
 	}
 }

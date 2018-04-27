@@ -28,7 +28,7 @@ public class Alumno implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(name = "vCodigoA")
+    @Column(name = "vCodigoA", length=10)
     private String vCodigoA;
     @Basic(optional = false)
     @Column(name = "vNombres")
@@ -42,7 +42,7 @@ public class Alumno implements Serializable {
     @Basic(optional = false)
     @Column(name = "vCorreoA")
     private String vCorreoA;
-    @Basic(optional = false)
+    @Basic(optional = true)
     @Column(name = "vTelefono")
     private String vTelefono;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
@@ -130,7 +130,6 @@ public class Alumno implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Alumno)) {
             return false;
         }
@@ -143,7 +142,7 @@ public class Alumno implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Alumno[ vCodigoA=" + vCodigoA + " ]";
+        return vNombres + " " + vApPaternoA + " " + vApMaternoA;
     }
     
 }

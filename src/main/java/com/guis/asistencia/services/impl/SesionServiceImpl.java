@@ -1,5 +1,7 @@
 package com.guis.asistencia.services.impl;
 
+import java.time.LocalTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,13 @@ public class SesionServiceImpl implements SesionService {
 	
 	public boolean sesionRegistrada(int nroSesion) {
 		return sesionRepository.existsById(nroSesion);
+	}
+
+	@Override
+	public boolean sesionTerminada(int nroSesion) {
+		Sesion sesionIniciada = buscarSesion(nroSesion);
+		
+		return sesionIniciada.getTHoraFin().compareTo(LocalTime.now()) < 0;
 	}
 
 }

@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -23,6 +26,18 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Entity
 @Table(name = "asistencia")
 @XmlRootElement
+@NamedStoredProcedureQuery(
+	name="listarAsistenciaSesion",
+	procedureName="sp_listar_asistencia_por_sesion",
+	parameters = {
+		@StoredProcedureParameter(
+				mode=ParameterMode.IN,
+				name="nro_sesion",
+				type=int.class
+		)
+	},
+	resultClasses = Asistencia.class
+)
 @NamedQueries({
     @NamedQuery(name = "Asistencia.findAll", query = "SELECT a FROM Asistencia a")})
 public class Asistencia implements Serializable {
@@ -107,7 +122,7 @@ public class Asistencia implements Serializable {
 
     @Override
     public String toString() {
-        return "entities.Asistencia[ asistenciaPK=" + asistenciaPK + " ]";
+        return "entities.Asistencia[ asistenciaPK=" + asistenciaPK + " ]" + "{Alumno: " + alumno +"}";
     }
     
 }

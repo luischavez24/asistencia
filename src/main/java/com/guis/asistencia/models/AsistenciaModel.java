@@ -6,6 +6,8 @@ import java.time.LocalTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.guis.asistencia.entities.Alumno;
+
 public class AsistenciaModel {
 	
 	private int nroSesion;
@@ -17,6 +19,8 @@ public class AsistenciaModel {
 	
 	@DateTimeFormat(iso=ISO.TIME)
 	private LocalTime horaDeLlegada;
+	
+	private Alumno alumno;
 	
 	public AsistenciaModel() {
 		
@@ -58,6 +62,14 @@ public class AsistenciaModel {
 	public String toString() {
 
 		return "AsistenciaModel [codigo=" + codigo + ", horaDeLlegada=" + horaDeLlegada + "]";
+	}
+
+	public Alumno getAlumno() {
+		return alumno;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
 	}
 	
 	
